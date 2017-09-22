@@ -1,0 +1,7 @@
+# Global
+.tmp
+.idea
+*.DS_Store
+
+# macOS Thumbnails
+._*
