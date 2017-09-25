@@ -1,0 +1,21 @@
+# Ethernet and Static IP Setup for c3po (router)
+[connection]
+id=c3po-ethernet
+type=ethernet
+interface-name=eth0
+permissions=
+secondaries=
+
+[ethernet]
+mac-address-blacklist=
+
+[ipv4]
+address1=192.168.1.169/24,192.168.1.1
+dns=8.8.8.8;8.8.4.4;
+dns-search=
+method=manual
+
+[ipv6]
+addr-gen-mode=stable-privacy
+dns-search=
+method=auto
