@@ -1,0 +1,12 @@
+# Groups devices into groups
+living_room:
+  name: Living Room
+  view: yes
+  entities:
+    - light.hue_white_lamp_1
+    - media_player.living_room_home
+bedroom:
+  name: Bedroom
+  view: yes
+  entities:
+    - light.hue_white_lamp_2
