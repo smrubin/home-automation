@@ -113,7 +113,7 @@ Hassio has a feature that allows us to take snapshots of the configuration for b
 
 In the UI, click the three vertical dots in the top-left corner, then click snapshosts.
 
-Give a new snapshot a name, then hit create. It will now be listed under available snapshots for restoration. This feature can even be used for restoring between different hardware (e.g. RPi O to RPi 3).
+Give a new snapshot a name, then hit create. It will now be listed under available snapshots for restoration. This feature can even be used for restoring between different hardware (e.g. RPi0 to RPi3).
 
 ### Up Next
 
@@ -124,6 +124,11 @@ Google-assistant:
 Turn pi into a google home with speaker and microphone
 
 Emulated Hue
+
 Haska
+
 Snips
+
 Native Conversation
+
+Gladys
