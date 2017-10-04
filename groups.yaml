@@ -10,3 +10,8 @@ bedroom:
   view: yes
   entities:
     - light.hue_white_lamp_2
+environment:
+  name: Environment
+  entities:
+    - sensor.yr_symbol
+    - sun.sun

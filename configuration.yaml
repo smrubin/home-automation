@@ -11,17 +11,18 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
 
-  # Customize options for components
+  # Customize options (names) for components
   customize:
     light.hue_white_lamp_1:
       friendly_name: Living Room Lamp
+      icon: mdi:lamp
     light.hue_white_lamp_2:
       friendly_name: Bedroom Lamp
     media_player.living_room_home:
       friendly_name: Google Home
 
 # Show links to resources in log and frontend
-introduction:
+# introduction:
 
 # Enables the frontend
 frontend:
@@ -68,6 +69,11 @@ sensor:
 # Text to speech
 tts:
   - platform: google
+
+#device_tracker:
+#  - platform: unifi
+#    username: !secret unifi_username
+#    password: !secret unifi_password
 
 group: !include groups.yaml
 automation: !include automations.yaml

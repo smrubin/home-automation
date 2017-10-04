@@ -33,6 +33,8 @@ Samba Sharing allows your computer to access the pi file structure as a network 
 
 It can be installed via the hassio UI and then accessed under shared networks in Finder.
 
+If you are on macOS and the folder is not showing up automatically, go to Finder and press CMD+K then enter ‘smb://hassio.local’
+
 #### SSH
 
 Install the hassio ssh add-on to ssh into the RPi. I am using a public/private key setup. GitHub has a guide [here](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/) for generating a new ssh key and adding it to the ssh-agent.
@@ -91,12 +93,6 @@ LetsEncrypt is a free, automated, and open certificate authority that generates 
 
 Install the LetsEncrypt add-on via the hassio GUI. Follow the instructions here: https://home-assistant.io/addons/lets_encrypt/. Note that you will have to update your home-assistant configuration and you should also add a password via the api_password option.
 
-#### NGINX SSL Proxy
-
-This add-on will setup an nginx ssl proxy and redirect http traffic to https.
-
-Install the nginx ssl proxy via the hassio GUI and enter the domain name into the options config.
-
 ### Home Assistant Configuration
 
 #### Managing Secrets
@@ -114,6 +110,11 @@ Hassio has a feature that allows us to take snapshots of the configuration for b
 In the UI, click the three vertical dots in the top-left corner, then click snapshosts.
 
 Give a new snapshot a name, then hit create. It will now be listed under available snapshots for restoration. This feature can even be used for restoring between different hardware (e.g. RPi0 to RPi3).
+
+#### Configuration
+
+* Groups
+* Custom Component Naming (friendly names, material design icons)
 
 ### Up Next
 
