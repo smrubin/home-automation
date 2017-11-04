@@ -1,17 +1,83 @@
-# Groups devices into groups
+# Views
+default_view:
+  view: yes
+  name: Home
+  entities:
+    - group.living_room_card
+    - group.bedroom_card
+    - group.environment_card
+    - group.ecobee_card
+    - lock.schlage_be469nxcen_touchscreen_deadbolt_locked
+    - device_tracker.rachel_rziphone
+    - device_tracker.srubin_workot
+
 living_room:
   name: Living Room
   view: yes
   entities:
-    - light.hue_white_lamp_1
-    - media_player.living_room_home
+    - group.living_room_card
+
 bedroom:
   name: Bedroom
   view: yes
   entities:
-    - light.hue_white_lamp_2
-environment:
+    - group.bedroom_card
+
+admin:
+  name: Admin
+  view: yes
+  entities:
+    - group.zwave_card
+    - group.schlage_card
+
+
+# Groups
+environment_card:
   name: Environment
   entities:
-    - sensor.yr_symbol
     - sun.sun
+    - sensor.weather_symbol
+    - sensor.weather_temperature
+    - sensor.weather_precipitation
+    - sensor.weather_wind_speed
+    - sensor.weather_humidity
+    - sensor.weather_fog
+    - sensor.weather_cloudiness
+
+living_room_card:
+  name: Living Room
+  entities:
+    - light.hue_white_lamp_1
+    - media_player.living_room_home
+
+bedroom_card:
+  name: Bedroom
+  entities:
+    - light.hue_white_lamp_2
+
+# Zwave devices
+zwave_card:
+  name: ZWave
+  entities:
+    - zwave.aeotec_zw090_zstick_gen5_us
+    - zwave.schlage_be469nxcen_touchscreen_deadbolt
+
+# schlage doorlock
+schlage_card:
+  name: Schlage
+  entities:
+    - sensor.schlage_be469nxcen_touchscreen_deadbolt_access_control
+    - sensor.schlage_be469nxcen_touchscreen_deadbolt_alarm_level
+    - sensor.schlage_be469nxcen_touchscreen_deadbolt_alarm_type
+    - sensor.schlage_be469nxcen_touchscreen_deadbolt_burglar
+    - sensor.schlage_be469nxcen_touchscreen_deadbolt_power_management
+    - sensor.schlage_be469nxcen_touchscreen_deadbolt_sourcenodeid
+    - sensor.schlage_be469nxcen_touchscreen_deadbolt_system
+
+# ecobee 3 lite
+ecobee_card:
+  name: Ecobee
+  entities:
+    - climate.home
+    - sensor.home_temperature
+    - sensor.home_humidity

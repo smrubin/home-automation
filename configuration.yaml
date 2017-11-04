@@ -12,14 +12,7 @@ homeassistant:
   time_zone: America/New_York
 
   # Customize options (names) for components
-  customize:
-    light.hue_white_lamp_1:
-      friendly_name: Living Room Lamp
-      icon: mdi:lamp
-    light.hue_white_lamp_2:
-      friendly_name: Bedroom Lamp
-    media_player.living_room_home:
-      friendly_name: Google Home
+  customize: !include customize.yaml
 
 # Show links to resources in log and frontend
 # introduction:
@@ -65,15 +58,37 @@ sun:
 # Weather prediction
 sensor:
   - platform: yr
+    name: Weather
+    forecast: 24
+    monitored_conditions:
+      - symbol
+      - temperature
+      - precipitation
+      - windSpeed
+      - humidity
+      - fog
+      - cloudiness
 
 # Text to speech
 tts:
   - platform: google
 
-#device_tracker:
-#  - platform: unifi
-#    username: !secret unifi_username
-#    password: !secret unifi_password
+mqtt:
+  broker: localhost
+  port: 1883
+  client_id: hassio-mqtt
+  keepalive: 60
+  username: !secret mqtt_username
+  password: !secret mqtt_password
 
+zwave:
+  usb_path: /dev/ttyACM0
+  network_key: !secret network_key
+
+ecobee:
+  api_key: !secret ecobee_api_key
+
+device_tracker: !include device_tracker.yaml
+zone: !include zones.yaml
 group: !include groups.yaml
 automation: !include automations.yaml

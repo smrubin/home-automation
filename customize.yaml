@@ -1,0 +1,8 @@
+  # Customize options (names, icons, images) for components
+light.hue_white_lamp_1:
+  friendly_name: Living Room Lamp
+  icon: mdi:lamp
+light.hue_white_lamp_2:
+  friendly_name: Bedroom Lamp
+media_player.living_room_home:
+  friendly_name: Google Home

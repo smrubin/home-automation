@@ -115,6 +115,45 @@ Give a new snapshot a name, then hit create. It will now be listed under availab
 
 * Groups
 * Custom Component Naming (friendly names, material design icons)
+* Add custom images to a www directory under config
+
+#### Presence Detection: MQTT, Mosquitto, and Owntracks
+
+MQTT is a machine to machine messaging protocol. An MQTT broker, is a Pub-Sub server that handles messages between machines. Mosquitto is an open-source MQTT broker that we will install on the RPi via Hassio.
+
+Add the Mosquitto Broker add-on via the hassio UI. For SSL, set the following options:
+
+```
+{
+  "plain": true,
+  "ssl": true,
+  "anonymous": false,
+  "logins": [
+    {
+      "username": "YOUR_SERVERS_USERNAME",
+      "password": "YOUR_SERVERS_PASSWORD"
+    },
+    {
+      "username": "YOUR_CLIENTS_USERNAME",
+      "password": "YOUR_CLIENTS_PASSWORD"
+    }
+  ],
+  "customize": {
+    "active": false,
+    "folder": "mosquitto"
+  },
+  "certfile": "fullchain.pem",
+  "keyfile": "privkey.pem"
+}
+```
+
+Then, update configurtation.yaml and restart home-assistant. Make sure to have the SSL port for Mosquitto (8883) open.
+
+### Z-Wave
+
+Using the aeotec action stick. Plug in and for the usb_path: `dmesg | grep USB`
+generating network_key script and placmenet
+
 
 ### Up Next
 
