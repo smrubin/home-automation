@@ -85,13 +85,10 @@ Make sure to grab the domain and token info for the hassio config.
 
 Install DuckDNS via the hassio GUI and copy your subdomain name and token into the options.
 
+If you choose to accept the Let's Encrypt terms and conditions, the DuckDNS add-on can now create and renew SSL certificates for your domain.
+
 Nice thing about DuckDNS is that it will detect if your public IP address has changed from your provider, and will update the DuckDNS configs appropriately.
 
-#### Let's Encrypt
-
-LetsEncrypt is a free, automated, and open certificate authority that generates an SSL certificate for our new (sub)domain. This will allow us to connect via https and use a password to access our hassio instance externally. This ssl encryption will encrypt our traffic to help prevent snooping.
-
-Install the LetsEncrypt add-on via the hassio GUI. Follow the instructions here: https://home-assistant.io/addons/lets_encrypt/. Note that you will have to update your home-assistant configuration and you should also add a password via the api_password option.
 
 ### Home Assistant Configuration
 
@@ -152,7 +149,12 @@ Then, update configurtation.yaml and restart home-assistant. Make sure to have t
 ### Z-Wave
 
 Using the aeotec action stick. Plug in and for the usb_path: `dmesg | grep USB`
-generating network_key script and placmenet
+generating network_key script and placement.
+
+
+### Pi Hole
+
+Adding the pihole add-on to home assistant provides network-wide ad blocking using your Hass.io instance. Setup and instructions can be found here: https://github.com/hassio-addons/addon-pi-hole
 
 
 ### Up Next

@@ -10,6 +10,7 @@ default_view:
     - lock.schlage_be469nxcen_touchscreen_deadbolt_locked
     - device_tracker.rachel_rziphone
     - device_tracker.srubin_workot
+    - sensor.pihole_ads_blocked_today
 
 living_room:
   name: Living Room
@@ -27,6 +28,7 @@ admin:
   name: Admin
   view: yes
   entities:
+    - group.pihole_card
     - group.zwave_card
     - group.schlage_card
 
@@ -81,3 +83,16 @@ ecobee_card:
     - climate.home
     - sensor.home_temperature
     - sensor.home_humidity
+
+# pi hole
+pihole_card:
+  name: Pi Hole
+  entities:
+    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_percentage_blocked_today
+    - sensor.pihole_dns_queries_cached
+    - sensor.pihole_dns_queries_forwarded
+    - sensor.pihole_dns_queries_today
+    - sensor.pihole_dns_unique_clients
+    - sensor.pihole_dns_unique_domains
+    - sensor.pihole_domains_blocked

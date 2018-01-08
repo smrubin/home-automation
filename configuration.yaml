@@ -59,7 +59,6 @@ sun:
 sensor:
   - platform: yr
     name: Weather
-    forecast: 24
     monitored_conditions:
       - symbol
       - temperature
@@ -73,6 +72,7 @@ sensor:
 tts:
   - platform: google
 
+# MQTT broker for device tracking
 mqtt:
   broker: localhost
   port: 1883
@@ -81,13 +81,36 @@ mqtt:
   username: !secret mqtt_username
   password: !secret mqtt_password
 
+# ZWave compatibility via Aeotec ZStick Gen 5 
 zwave:
   usb_path: /dev/ttyACM0
   network_key: !secret network_key
 
+# Ecobee smart thermostat
 ecobee:
   api_key: !secret ecobee_api_key
 
+# PiHole sensors and stats
+sensor:
+  - platform: pi_hole
+    host: 192.168.1.169
+    ssl: true
+    verify_ssl: false
+
+# Additional side panels
+panel_iframe:
+  # Pihole
+  pihole:
+    title: Pi-hole
+    icon: mdi:block-helper
+    url: https://192.168.1.169/admin/index.php
+  # Edge Router X
+  edgerouter:
+    title: Router
+    icon: mdi:router-wireless
+    url: https://192.168.1.1
+
+# Include additional configs
 device_tracker: !include device_tracker.yaml
 zone: !include zones.yaml
 group: !include groups.yaml

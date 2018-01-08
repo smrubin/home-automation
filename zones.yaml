@@ -1,6 +1,6 @@
-- name: Deloitte
-  latitude: !secret deloitte_lat
-  longitude: !secret deloitte_long
+- name: Storyblocks
+  latitude: !secret storyblocks_lat
+  longitude: !secret storyblocks_long
   radius: 250
   icon: mdi:domain
 
