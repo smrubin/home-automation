@@ -55,8 +55,8 @@ logbook:
 # Track the sun
 sun:
 
-# Weather prediction
 sensor:
+  # Weather prediction
   - platform: yr
     name: Weather
     monitored_conditions:
@@ -67,21 +67,26 @@ sensor:
       - humidity
       - fog
       - cloudiness
+  # PiHole sensors and stats
+  - platform: pi_hole
+    host: 192.168.1.169
+    ssl: true
+    verify_ssl: false
 
 # Text to speech
 tts:
   - platform: google
 
 # MQTT broker for device tracking
-mqtt:
-  broker: localhost
-  port: 1883
-  client_id: hassio-mqtt
-  keepalive: 60
-  username: !secret mqtt_username
-  password: !secret mqtt_password
+# mqtt:
+#   broker: localhost
+#   port: 1883
+#   client_id: hassio-mqtt
+#   keepalive: 60
+#   username: !secret mqtt_username
+#   password: !secret mqtt_password
 
-# ZWave compatibility via Aeotec ZStick Gen 5 
+# ZWave compatibility via Aeotec ZStick Gen 5
 zwave:
   usb_path: /dev/ttyACM0
   network_key: !secret network_key
@@ -89,13 +94,6 @@ zwave:
 # Ecobee smart thermostat
 ecobee:
   api_key: !secret ecobee_api_key
-
-# PiHole sensors and stats
-sensor:
-  - platform: pi_hole
-    host: 192.168.1.169
-    ssl: true
-    verify_ssl: false
 
 # Additional side panels
 panel_iframe:

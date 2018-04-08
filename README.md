@@ -154,8 +154,9 @@ generating network_key script and placement.
 
 ### Pi Hole
 
-Adding the pihole add-on to home assistant provides network-wide ad blocking using your Hass.io instance. Setup and instructions can be found here: https://github.com/hassio-addons/addon-pi-hole
+Adding the pihole add-on to home assistant provides network-wide ad blocking using your Hass.io instance. Setup and instructions can be found here: https://github.com/hassio-addons/addon-pi-hole. If you want to view the Pi-Hole UI in the side menu, make sure to enable SSL and use the setup in configuration.yaml. Otherwise you can just access the Pi Hole UI on 192.168.1.169/admin/index.php
 
+Update router DNS settings to use the IP address of the RPi. For EdgeRouter: System -> Name Server -> 192.168.1.169, 8.8.8.8, 8.8.4.4.
 
 ### Up Next
 
