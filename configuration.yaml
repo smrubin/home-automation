@@ -24,9 +24,7 @@ frontend:
 config:
 
 http:
-  # Uncomment this to add a password (recommended!)
   api_password: !secret api_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   base_url: !secret base_url
   ssl_certificate: /ssl/fullchain.pem
   ssl_key: /ssl/privkey.pem
@@ -37,8 +35,6 @@ http:
 # For more information, please see:
 # https://home-assistant.io/blog/2016/10/25/explaining-the-updater/
 updater:
-  # Optional, allows Home Assistant developers to focus on popular components.
-  # include_used_components: true
 
 # Discover some devices automatically
 discovery:
@@ -76,15 +72,6 @@ sensor:
 # Text to speech
 tts:
   - platform: google
-
-# MQTT broker for device tracking
-# mqtt:
-#   broker: localhost
-#   port: 1883
-#   client_id: hassio-mqtt
-#   keepalive: 60
-#   username: !secret mqtt_username
-#   password: !secret mqtt_password
 
 # ZWave compatibility via Aeotec ZStick Gen 5
 zwave:
