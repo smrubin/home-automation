@@ -47,7 +47,7 @@ environment_card:
     - sensor.weather_cloudiness
 
 living_room_card:
-  name: Family Room
+  name: Living Room
   entities:
     - light.hue_white_lamp_1
     - media_player.living_room_home
