@@ -90,7 +90,7 @@ panel_iframe:
   pihole:
     title: Pi-hole
     icon: mdi:block-helper
-    url: https://192.168.1.169/admin/index.php
+    url: https://192.168.1.169:4865
   # Edge Router X
   edgerouter:
     title: Router
