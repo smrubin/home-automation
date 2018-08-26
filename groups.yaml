@@ -5,7 +5,7 @@ default_view:
   entities:
     - group.living_room_card
     - group.bedroom_card
-    - group.environment_card
+#    - group.environment_card
     - group.ecobee_card
     - lock.locked
     - sensor.pihole_ads_blocked_today

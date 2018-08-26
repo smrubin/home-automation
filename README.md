@@ -157,8 +157,6 @@ Turn pi into a google home with speaker and microphone
 
 Emulated Hue
 
-Haska
-
 Snips
 
 Native Conversation

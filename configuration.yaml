@@ -63,8 +63,8 @@ sensor:
   # PiHole sensors and stats
   - platform: pi_hole
     host: 192.168.1.169:4865
-    ssl: true
-    verify_ssl: false
+#    ssl: true
+#    verify_ssl: false
     monitored_conditions:
       - ads_blocked_today
       - dns_queries_today
