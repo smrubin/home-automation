@@ -65,7 +65,7 @@ sensor:
       - cloudiness
   # PiHole sensors and stats
   - platform: pi_hole
-    host: localhost:4865
+    host: 192.168.1.169:4865
     ssl: true
     verify_ssl: false
     monitored_conditions:
