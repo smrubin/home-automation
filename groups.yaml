@@ -8,9 +8,7 @@ default_view:
     - group.environment_card
     - group.ecobee_card
     - lock.locked
-    - device_tracker.rachel_rziphone
-    - device_tracker.srubin_workot
-#    - sensor.pihole_ads_blocked_today
+    - sensor.pihole_ads_blocked_today
 
 living_room:
   name: Living Room
@@ -68,13 +66,13 @@ zwave_card:
 schlage_card:
   name: Schlage
   entities:
-    - sensor.schlage_be469nxcen_touchscreen_deadbolt_access_control
-    - sensor.schlage_be469nxcen_touchscreen_deadbolt_alarm_level
-    - sensor.schlage_be469nxcen_touchscreen_deadbolt_alarm_type
-    - sensor.schlage_be469nxcen_touchscreen_deadbolt_burglar
-    - sensor.schlage_be469nxcen_touchscreen_deadbolt_power_management
-    - sensor.schlage_be469nxcen_touchscreen_deadbolt_sourcenodeid
-    - sensor.schlage_be469nxcen_touchscreen_deadbolt_system
+    - sensor.schlage_be469_touchscreen_deadbolt_access_control
+    - sensor.schlage_be469_touchscreen_deadbolt_alarm_level
+    - sensor.schlage_be469_touchscreen_deadbolt_alarm_type
+    - sensor.schlage_be469_touchscreen_deadbolt_burglar
+    - sensor.schlage_be469_touchscreen_deadbolt_power_management
+    - sensor.schlage_be469_touchscreen_deadbolt_sourcenodeid
+    - sensor.schlage_be469_touchscreen_deadbolt_system
 
 # ecobee 3 lite
 ecobee_card:
