@@ -83,6 +83,12 @@ zwave:
 ecobee:
   api_key: !secret ecobee_api_key
 
+# Xbox One
+media_player:
+  - platform: xboxone
+    device: !secret xbox_live_id
+    name: Xbox
+
 # Additional side panels
 panel_iframe:
   # Pihole
