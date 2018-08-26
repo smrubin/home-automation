@@ -5,12 +5,12 @@ default_view:
   entities:
     - group.living_room_card
     - group.bedroom_card
-    # - group.environment_card
+    - group.environment_card
     - group.ecobee_card
-    - lock.schlage_be469nxcen_touchscreen_deadbolt_locked
+    - lock.locked
     - device_tracker.rachel_rziphone
     - device_tracker.srubin_workot
-    - sensor.pihole_ads_blocked_today
+#    - sensor.pihole_ads_blocked_today
 
 living_room:
   name: Living Room
@@ -49,13 +49,13 @@ environment_card:
 living_room_card:
   name: Living Room
   entities:
-    - light.hue_white_lamp_1
+    - light.living_room
     - media_player.living_room_home
 
 bedroom_card:
   name: Bedroom
   entities:
-    - light.hue_white_lamp_2
+    - light.bedroom
 
 # Zwave devices
 zwave_card:

@@ -14,9 +14,6 @@ homeassistant:
   # Customize options (names) for components
   customize: !include customize.yaml
 
-# Show links to resources in log and frontend
-# introduction:
-
 # Enables the frontend
 frontend:
 
