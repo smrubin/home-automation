@@ -2,6 +2,26 @@ Home Lab and Automation
 
 This guide will walk through the setup and configuration for my home network and automation. A list of the hardware is in homelab.md, and the contents of this repo primarily are for a [home-assistant](https://home-assistant.io/) setup using [hass.io](https://home-assistant.io/hassio/).
 
+### Gear
+
+### Networking
+* [Ubiquity Edge Router X](https://www.ubnt.com/edgemax/edgerouter-x/)
+* [Ubiquity Unifi AP AC Lite](https://www.ubnt.com/unifi/unifi-ap-ac-lite/)
+
+### Home Automation
+
+#### Hue (Zigbee Protocol)
+* [Hue Bridge](http://www2.meethue.com/en-us/p/hue-bridge/046677458478/specifications)
+* [Hue E26 Bulb](http://www2.meethue.com/en-us/p/hue-white-4-pack-e26/46677472023) x2
+
+#### Google
+* [Google Home](https://madeby.google.com/home/features/)
+
+#### Home-Assistant
+* [Raspberry Pi Running Hass.io](https://home-assistant.io/)
+* RPi 2, Model B; 8GB MicroSD Card; Wifi Adapter; 2.5A USB Power Supply
+
+
 ### Home-Assistant
 
 Home-assistant is an open source home automation platform, like Samsung SmartThings. There are lots of ways to install home-assistant, especially on the Raspberry Pi.
@@ -25,7 +45,7 @@ To give the RPi a static IP address, follow the instructions here: [https://docs
 
 ### Making Configuration Easier
 
-I've installed a couple of hassio add-ons to make configuration easier: Samba sharing, auto-update chekcer, and an ssh server.
+I've installed a couple of hassio add-ons to make configuration easier:
 
 #### Samba Sharing
 
@@ -114,37 +134,6 @@ Give a new snapshot a name, then hit create. It will now be listed under availab
 * Custom Component Naming (friendly names, material design icons)
 * Add custom images to a www directory under config
 
-#### Presence Detection: MQTT, Mosquitto, and Owntracks
-
-MQTT is a machine to machine messaging protocol. An MQTT broker, is a Pub-Sub server that handles messages between machines. Mosquitto is an open-source MQTT broker that we will install on the RPi via Hassio.
-
-Add the Mosquitto Broker add-on via the hassio UI. For SSL, set the following options:
-
-```
-{
-  "plain": true,
-  "ssl": true,
-  "anonymous": false,
-  "logins": [
-    {
-      "username": "YOUR_SERVERS_USERNAME",
-      "password": "YOUR_SERVERS_PASSWORD"
-    },
-    {
-      "username": "YOUR_CLIENTS_USERNAME",
-      "password": "YOUR_CLIENTS_PASSWORD"
-    }
-  ],
-  "customize": {
-    "active": false,
-    "folder": "mosquitto"
-  },
-  "certfile": "fullchain.pem",
-  "keyfile": "privkey.pem"
-}
-```
-
-Then, update configurtation.yaml and restart home-assistant. Make sure to have the SSL port for Mosquitto (8883) open.
 
 ### Z-Wave
 
@@ -154,7 +143,7 @@ generating network_key script and placement.
 
 ### Pi Hole
 
-Adding the pihole add-on to home assistant provides network-wide ad blocking using your Hass.io instance. Setup and instructions can be found here: https://github.com/hassio-addons/addon-pi-hole. If you want to view the Pi-Hole UI in the side menu, make sure to enable SSL and use the setup in configuration.yaml. Otherwise you can just access the Pi Hole UI on 192.168.1.169/admin/index.php
+Adding the pihole add-on to home assistant provides network-wide ad blocking using your Hass.io instance. Setup and instructions can be found here: https://github.com/hassio-addons/addon-pi-hole. If you want to view the Pi-Hole UI in the side menu, make sure to enable SSL and use the setup in configuration.yaml. Otherwise you can just access the Pi Hole UI on 192.168.1.169:4865
 
 Update router DNS settings to use the IP address of the RPi. For EdgeRouter: System -> Name Server -> 192.168.1.169, 8.8.8.8, 8.8.4.4.
 
@@ -175,3 +164,7 @@ Snips
 Native Conversation
 
 Gladys
+
+Unifi
+
+Lovelace
