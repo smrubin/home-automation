@@ -89,6 +89,13 @@ media_player:
     device: !secret xbox_live_id
     name: Xbox
 
+# Xiaomi Vacuum
+vacuum:
+  - platform: xiaomi_miio
+    host: 192.168.1.70
+    token: !secret xiaomi_vacuum_access_token
+    name: vacuum
+
 # Additional side panels
 panel_iframe:
   # Pihole
